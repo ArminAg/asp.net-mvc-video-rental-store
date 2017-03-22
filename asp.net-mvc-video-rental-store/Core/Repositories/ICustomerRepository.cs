@@ -6,5 +6,6 @@ namespace asp.net_mvc_video_rental_store.Core.Repositories
     public interface ICustomerRepository
     {
         IEnumerable<Customer> GetAllCustomers();
+        Customer GetById(int id);
     }
 }

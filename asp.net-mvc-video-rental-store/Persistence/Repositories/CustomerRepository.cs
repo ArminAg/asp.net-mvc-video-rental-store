@@ -18,5 +18,10 @@ namespace asp.net_mvc_video_rental_store.Persistence.Repositories
         {
             return _context.Customers.ToList();
         }
+
+        public Customer GetById(int id)
+        {
+            return _context.Customers.SingleOrDefault(c => c.Id == id);
+        }
     }
 }
