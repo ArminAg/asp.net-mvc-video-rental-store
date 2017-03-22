@@ -211,6 +211,10 @@
     <Compile Include="Persistence\Migrations\201703222001388_AddMembershipType.Designer.cs">
       <DependentUpon>201703222001388_AddMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persistence\Migrations\201703222004497_PopulateMembershipTypes.cs" />
+    <Compile Include="Persistence\Migrations\201703222004497_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201703222004497_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persistence\Migrations\Configuration.cs" />
     <Compile Include="Persistence\ApplicationDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -282,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persistence\Migrations\201703222001388_AddMembershipType.resx">
       <DependentUpon>201703222001388_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Migrations\201703222004497_PopulateMembershipTypes.resx">
+      <DependentUpon>201703222004497_PopulateMembershipTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
