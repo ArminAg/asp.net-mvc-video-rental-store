@@ -178,6 +178,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Core\Models\Customer.cs" />
+    <Compile Include="Core\Models\MembershipType.cs" />
     <Compile Include="Core\Models\Movie.cs" />
     <Compile Include="Core\ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="Core\ViewModels\Account\ExternalLoginListViewModel.cs" />
@@ -205,6 +206,10 @@
     <Compile Include="Persistence\Migrations\201703221944124_InitialModel.cs" />
     <Compile Include="Persistence\Migrations\201703221944124_InitialModel.Designer.cs">
       <DependentUpon>201703221944124_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Migrations\201703222001388_AddMembershipType.cs" />
+    <Compile Include="Persistence\Migrations\201703222001388_AddMembershipType.Designer.cs">
+      <DependentUpon>201703222001388_AddMembershipType.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistence\Migrations\Configuration.cs" />
     <Compile Include="Persistence\ApplicationDbContext.cs" />
@@ -274,6 +279,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Persistence\Migrations\201703221944124_InitialModel.resx">
       <DependentUpon>201703221944124_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Migrations\201703222001388_AddMembershipType.resx">
+      <DependentUpon>201703222001388_AddMembershipType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
