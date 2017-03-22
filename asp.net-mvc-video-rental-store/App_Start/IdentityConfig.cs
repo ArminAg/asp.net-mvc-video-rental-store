@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using asp.net_mvc_video_rental_store.Models;
+using asp.net_mvc_video_rental_store.Persistence;
 
 namespace asp.net_mvc_video_rental_store
 {

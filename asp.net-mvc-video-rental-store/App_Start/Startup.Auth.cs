@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using asp.net_mvc_video_rental_store.Models;
+using asp.net_mvc_video_rental_store.Persistence;
 
 namespace asp.net_mvc_video_rental_store
 {
