@@ -1,5 +1,6 @@
 ﻿using asp.net_mvc_video_rental_store.Core.Models;
 using asp.net_mvc_video_rental_store.Models;
+using asp.net_mvc_video_rental_store.Persistence.EntityConfigurations;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 
@@ -18,6 +19,13 @@ namespace asp.net_mvc_video_rental_store.Persistence
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new CustomerConfiguration());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

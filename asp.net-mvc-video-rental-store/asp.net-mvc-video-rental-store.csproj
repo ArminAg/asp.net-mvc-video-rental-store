@@ -203,6 +203,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Core\Models\ApplicationUser.cs" />
+    <Compile Include="Persistence\EntityConfigurations\CustomerConfiguration.cs" />
     <Compile Include="Persistence\Migrations\201703221944124_InitialModel.cs" />
     <Compile Include="Persistence\Migrations\201703221944124_InitialModel.Designer.cs">
       <DependentUpon>201703221944124_InitialModel.cs</DependentUpon>
@@ -214,6 +215,10 @@
     <Compile Include="Persistence\Migrations\201703222004497_PopulateMembershipTypes.cs" />
     <Compile Include="Persistence\Migrations\201703222004497_PopulateMembershipTypes.Designer.cs">
       <DependentUpon>201703222004497_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Migrations\201703222014047_AddCustomerNameConfiguration.cs" />
+    <Compile Include="Persistence\Migrations\201703222014047_AddCustomerNameConfiguration.Designer.cs">
+      <DependentUpon>201703222014047_AddCustomerNameConfiguration.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistence\Migrations\Configuration.cs" />
     <Compile Include="Persistence\ApplicationDbContext.cs" />
@@ -289,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persistence\Migrations\201703222004497_PopulateMembershipTypes.resx">
       <DependentUpon>201703222004497_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Migrations\201703222014047_AddCustomerNameConfiguration.resx">
+      <DependentUpon>201703222014047_AddCustomerNameConfiguration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
