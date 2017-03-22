@@ -1,4 +1,4 @@
-﻿using asp.net_mvc_video_rental_store.Core.Models;
+﻿using asp.net_mvc_video_rental_store.Core;
 using asp.net_mvc_video_rental_store.Core.ViewModels;
 using AutoMapper;
 using System.Collections.Generic;
@@ -8,19 +8,17 @@ namespace asp.net_mvc_video_rental_store.Controllers
 {
     public class MoviesController : Controller
     {
-        public ActionResult Index()
+        private IUnitOfWork _unitOfWork;
+
+        public MoviesController(IUnitOfWork unitOfWork)
         {
-            var movies = GetMovies();
-            return View(Mapper.Map<IEnumerable<MovieViewModel>>(movies));
+            _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<Movie> GetMovies()
+        public ActionResult Index()
         {
-            return new List<Movie>
-            {
-                new Movie { Id = 1, Name = "Movie 1" },
-                new Movie { Id = 2, Name = "Movie 2"}
-            };
+            var movies = _unitOfWork.Movies.GetAllMovies();
+            return View(Mapper.Map<IEnumerable<MovieViewModel>>(movies));
         }
     }
 }

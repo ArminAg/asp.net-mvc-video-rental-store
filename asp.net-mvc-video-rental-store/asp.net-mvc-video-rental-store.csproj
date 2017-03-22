@@ -258,6 +258,8 @@
     <Compile Include="Persistence\ApplicationDbContext.cs" />
     <Compile Include="Persistence\Repositories\CustomerRepository.cs" />
     <Compile Include="Core\Repositories\ICustomerRepository.cs" />
+    <Compile Include="Core\Repositories\IMovieRepository.cs" />
+    <Compile Include="Persistence\Repositories\MovieRepository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
