@@ -1,6 +1,7 @@
 ﻿using asp.net_mvc_video_rental_store.Core.Models;
 using asp.net_mvc_video_rental_store.Core.Repositories;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace asp.net_mvc_video_rental_store.Persistence.Repositories
@@ -16,12 +17,16 @@ namespace asp.net_mvc_video_rental_store.Persistence.Repositories
 
         public IEnumerable<Movie> GetAllMovies()
         {
-            return _context.Movies.ToList();
+            return _context.Movies
+                .Include(m => m.Genre)
+                .ToList();
         }
 
         public Movie GetById(int id)
         {
-            return _context.Movies.SingleOrDefault(m => m.Id == id);
+            return _context.Movies
+                .Include(m => m.Genre)
+                .SingleOrDefault(m => m.Id == id);
         }
     }
 }

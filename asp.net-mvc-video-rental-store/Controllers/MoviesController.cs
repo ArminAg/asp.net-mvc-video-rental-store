@@ -20,5 +20,15 @@ namespace asp.net_mvc_video_rental_store.Controllers
             var movies = _unitOfWork.Movies.GetAllMovies();
             return View(Mapper.Map<IEnumerable<MovieViewModel>>(movies));
         }
+
+        public ActionResult Details(int id)
+        {
+            var movie = _unitOfWork.Movies.GetById(id);
+
+            if (movie == null)
+                return HttpNotFound();
+
+            return View(Mapper.Map<MovieViewModel>(movie));
+        }
     }
 }

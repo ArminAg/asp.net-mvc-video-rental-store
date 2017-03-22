@@ -211,6 +211,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Core\Models\Customer.cs" />
+    <Compile Include="Core\Models\Genre.cs" />
     <Compile Include="Core\Models\MembershipType.cs" />
     <Compile Include="Core\Models\Movie.cs" />
     <Compile Include="Core\ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
@@ -223,6 +224,7 @@
     <Compile Include="Core\ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="Core\ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="Core\ViewModels\CustomerViewModel.cs" />
+    <Compile Include="Core\ViewModels\GenreViewModel.cs" />
     <Compile Include="Core\ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="Core\ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="Core\ViewModels\Manage\ConfigureTwoFactorViewModel.cs" />
@@ -239,7 +241,9 @@
     <Compile Include="Core\Models\ApplicationUser.cs" />
     <Compile Include="Persistence\EntityConfigurations\CustomerConfiguration.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Persistence\EntityConfigurations\GenreConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\MembershipTypeConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\MovieConfiguration.cs" />
     <Compile Include="Persistence\Migrations\201703221944124_InitialModel.cs" />
     <Compile Include="Persistence\Migrations\201703221944124_InitialModel.Designer.cs">
       <DependentUpon>201703221944124_InitialModel.cs</DependentUpon>
@@ -271,6 +275,18 @@
     <Compile Include="Persistence\Migrations\201703222153179_AddBirthdateToCustomer.cs" />
     <Compile Include="Persistence\Migrations\201703222153179_AddBirthdateToCustomer.Designer.cs">
       <DependentUpon>201703222153179_AddBirthdateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Migrations\201703222203200_AddPropertiesToMoviesTable.cs" />
+    <Compile Include="Persistence\Migrations\201703222203200_AddPropertiesToMoviesTable.Designer.cs">
+      <DependentUpon>201703222203200_AddPropertiesToMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Migrations\201703222206459_AddGenreTable.cs" />
+    <Compile Include="Persistence\Migrations\201703222206459_AddGenreTable.Designer.cs">
+      <DependentUpon>201703222206459_AddGenreTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Migrations\201703222211572_PopulateGenreTable.cs" />
+    <Compile Include="Persistence\Migrations\201703222211572_PopulateGenreTable.Designer.cs">
+      <DependentUpon>201703222211572_PopulateGenreTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistence\Migrations\Configuration.cs" />
     <Compile Include="Persistence\ApplicationDbContext.cs" />
@@ -341,6 +357,7 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Persistence\Migrations\201703221944124_InitialModel.resx">
@@ -366,6 +383,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persistence\Migrations\201703222153179_AddBirthdateToCustomer.resx">
       <DependentUpon>201703222153179_AddBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Migrations\201703222203200_AddPropertiesToMoviesTable.resx">
+      <DependentUpon>201703222203200_AddPropertiesToMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Migrations\201703222206459_AddGenreTable.resx">
+      <DependentUpon>201703222206459_AddGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Migrations\201703222211572_PopulateGenreTable.resx">
+      <DependentUpon>201703222211572_PopulateGenreTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

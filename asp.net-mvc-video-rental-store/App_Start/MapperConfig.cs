@@ -13,6 +13,7 @@ namespace asp.net_mvc_video_rental_store.App_Start
                 m.CreateMap<Customer, CustomerViewModel>().ReverseMap();
                 m.CreateMap<Movie, MovieViewModel>().ReverseMap();
                 m.CreateMap<MembershipType, MembershipTypeViewModel>().ReverseMap();
+                m.CreateMap<Genre, GenreViewModel>().ReverseMap();
             });
         }
     }
