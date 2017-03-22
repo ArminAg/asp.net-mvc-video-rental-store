@@ -1,6 +1,7 @@
 ﻿using asp.net_mvc_video_rental_store.Core.Models;
 using asp.net_mvc_video_rental_store.Core.Repositories;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace asp.net_mvc_video_rental_store.Persistence.Repositories
@@ -16,7 +17,9 @@ namespace asp.net_mvc_video_rental_store.Persistence.Repositories
 
         public IEnumerable<Customer> GetAllCustomers()
         {
-            return _context.Customers.ToList();
+            return _context.Customers
+                .Include(c => c.MembershipType)
+                .ToList();
         }
 
         public Customer GetById(int id)

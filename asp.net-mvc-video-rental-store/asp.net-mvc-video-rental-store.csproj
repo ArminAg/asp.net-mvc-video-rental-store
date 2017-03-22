@@ -231,6 +231,7 @@
     <Compile Include="Core\ViewModels\Manage\ManageLoginsViewModel.cs" />
     <Compile Include="Core\ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="Core\ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="Core\ViewModels\MembershipTypeViewModel.cs" />
     <Compile Include="Core\ViewModels\MovieViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -253,6 +254,14 @@
     <Compile Include="Persistence\Migrations\201703222014047_AddCustomerNameConfiguration.cs" />
     <Compile Include="Persistence\Migrations\201703222014047_AddCustomerNameConfiguration.Designer.cs">
       <DependentUpon>201703222014047_AddCustomerNameConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Migrations\201703222138132_AddNameToMembershipType.cs" />
+    <Compile Include="Persistence\Migrations\201703222138132_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>201703222138132_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Migrations\201703222138572_PopulateMembershipTypeNames.cs" />
+    <Compile Include="Persistence\Migrations\201703222138572_PopulateMembershipTypeNames.Designer.cs">
+      <DependentUpon>201703222138572_PopulateMembershipTypeNames.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistence\Migrations\Configuration.cs" />
     <Compile Include="Persistence\ApplicationDbContext.cs" />
@@ -336,6 +345,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persistence\Migrations\201703222014047_AddCustomerNameConfiguration.resx">
       <DependentUpon>201703222014047_AddCustomerNameConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Migrations\201703222138132_AddNameToMembershipType.resx">
+      <DependentUpon>201703222138132_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Migrations\201703222138572_PopulateMembershipTypeNames.resx">
+      <DependentUpon>201703222138572_PopulateMembershipTypeNames.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
