@@ -24,6 +24,7 @@ namespace asp.net_mvc_video_rental_store.Persistence
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new CustomerConfiguration());
+            modelBuilder.Configurations.Add(new MembershipTypeConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

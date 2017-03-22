@@ -239,6 +239,7 @@
     <Compile Include="Core\Models\ApplicationUser.cs" />
     <Compile Include="Persistence\EntityConfigurations\CustomerConfiguration.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Persistence\EntityConfigurations\MembershipTypeConfiguration.cs" />
     <Compile Include="Persistence\Migrations\201703221944124_InitialModel.cs" />
     <Compile Include="Persistence\Migrations\201703221944124_InitialModel.Designer.cs">
       <DependentUpon>201703221944124_InitialModel.cs</DependentUpon>
@@ -262,6 +263,14 @@
     <Compile Include="Persistence\Migrations\201703222138572_PopulateMembershipTypeNames.cs" />
     <Compile Include="Persistence\Migrations\201703222138572_PopulateMembershipTypeNames.Designer.cs">
       <DependentUpon>201703222138572_PopulateMembershipTypeNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Migrations\201703222151230_AddMembershipTypeNameRestrictions.cs" />
+    <Compile Include="Persistence\Migrations\201703222151230_AddMembershipTypeNameRestrictions.Designer.cs">
+      <DependentUpon>201703222151230_AddMembershipTypeNameRestrictions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Migrations\201703222153179_AddBirthdateToCustomer.cs" />
+    <Compile Include="Persistence\Migrations\201703222153179_AddBirthdateToCustomer.Designer.cs">
+      <DependentUpon>201703222153179_AddBirthdateToCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistence\Migrations\Configuration.cs" />
     <Compile Include="Persistence\ApplicationDbContext.cs" />
@@ -351,6 +360,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persistence\Migrations\201703222138572_PopulateMembershipTypeNames.resx">
       <DependentUpon>201703222138572_PopulateMembershipTypeNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Migrations\201703222151230_AddMembershipTypeNameRestrictions.resx">
+      <DependentUpon>201703222151230_AddMembershipTypeNameRestrictions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Migrations\201703222153179_AddBirthdateToCustomer.resx">
+      <DependentUpon>201703222153179_AddBirthdateToCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
