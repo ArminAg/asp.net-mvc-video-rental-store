@@ -1,4 +1,5 @@
 ﻿using asp.net_mvc_video_rental_store.Core.Models;
+using asp.net_mvc_video_rental_store.Core.Repositories;
 using asp.net_mvc_video_rental_store.Core.ViewModels;
 using AutoMapper;
 using System.Collections.Generic;
@@ -9,9 +10,16 @@ namespace asp.net_mvc_video_rental_store.Controllers
 {
     public class CustomersController : Controller
     {
+        private ICustomerRepository _repository;
+
+        public CustomersController(ICustomerRepository repository)
+        {
+            _repository = repository;
+        }
+
         public ActionResult Index()
         {
-            var customers = GetCustomers();
+            var customers = _repository.GetAllCustomers();
             return View(Mapper.Map<IEnumerable<CustomerViewModel>>(customers));
         }
 
