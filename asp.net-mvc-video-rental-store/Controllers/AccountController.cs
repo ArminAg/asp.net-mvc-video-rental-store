@@ -376,7 +376,12 @@ namespace asp.net_mvc_video_rental_store.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    DrivingLicence = model.DrivingLicence
+                };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

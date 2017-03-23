@@ -1,12 +1,11 @@
-﻿using System;
+﻿using asp.net_mvc_video_rental_store.Models;
+using asp.net_mvc_video_rental_store.Persistence;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Owin;
-using asp.net_mvc_video_rental_store.Models;
-using asp.net_mvc_video_rental_store.Persistence;
+using System;
 
 namespace asp.net_mvc_video_rental_store
 {
@@ -55,9 +54,9 @@ namespace asp.net_mvc_video_rental_store
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "393286711058668",
+               appSecret: Environment.GetEnvironmentVariable("FacebookAppSecret"));
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
