@@ -18,8 +18,7 @@ namespace asp.net_mvc_video_rental_store.Controllers
 
         public ActionResult Index()
         {
-            var customers = _unitOfWork.Customers.GetAllCustomers();
-            return View(Mapper.Map<IEnumerable<CustomerViewModel>>(customers));
+            return View();
         }
 
         public ActionResult Details(int id)

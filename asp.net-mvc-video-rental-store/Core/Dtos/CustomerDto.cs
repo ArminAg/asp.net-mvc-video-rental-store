@@ -15,6 +15,8 @@ namespace asp.net_mvc_video_rental_store.Core.Dtos
         
         public DateTime? BirthDate { get; set; }
 
+        public MembershipTypeDto MembershipType { get; set; }
+
         [Required]
         public byte MembershipTypeId { get; set; }
     }
