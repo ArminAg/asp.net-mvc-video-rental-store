@@ -23,5 +23,10 @@ namespace asp.net_mvc_video_rental_store.Core.ViewModels.Account
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        [Display(Name = "Driving Licence")]
+        public string DrivingLicence { get; set; }
     }
 }

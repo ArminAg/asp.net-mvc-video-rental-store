@@ -29,6 +29,7 @@ namespace asp.net_mvc_video_rental_store.Persistence
             modelBuilder.Configurations.Add(new MembershipTypeConfiguration());
             modelBuilder.Configurations.Add(new MovieConfiguration());
             modelBuilder.Configurations.Add(new GenreConfiguration());
+            modelBuilder.Configurations.Add(new ApplicationUserConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

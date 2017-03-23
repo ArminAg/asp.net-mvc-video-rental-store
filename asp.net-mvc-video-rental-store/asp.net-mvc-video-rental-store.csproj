@@ -254,6 +254,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Core\Models\ApplicationUser.cs" />
+    <Compile Include="Persistence\EntityConfigurations\ApplicationUserConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\CustomerConfiguration.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Persistence\EntityConfigurations\GenreConfiguration.cs" />
@@ -306,6 +307,10 @@
     <Compile Include="Persistence\Migrations\201703230857407_SeedUsers.cs" />
     <Compile Include="Persistence\Migrations\201703230857407_SeedUsers.Designer.cs">
       <DependentUpon>201703230857407_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persistence\Migrations\201703230934159_AddDrivingLicenceToApplicationUser.cs" />
+    <Compile Include="Persistence\Migrations\201703230934159_AddDrivingLicenceToApplicationUser.Designer.cs">
+      <DependentUpon>201703230934159_AddDrivingLicenceToApplicationUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistence\Migrations\Configuration.cs" />
     <Compile Include="Persistence\ApplicationDbContext.cs" />
@@ -643,6 +648,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persistence\Migrations\201703230857407_SeedUsers.resx">
       <DependentUpon>201703230857407_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Migrations\201703230934159_AddDrivingLicenceToApplicationUser.resx">
+      <DependentUpon>201703230934159_AddDrivingLicenceToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
