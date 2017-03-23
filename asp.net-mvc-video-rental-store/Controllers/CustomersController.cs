@@ -35,9 +35,9 @@ namespace asp.net_mvc_video_rental_store.Controllers
         public ActionResult Create()
         {
             var membershipTypes = _unitOfWork.MembershipTypes.GetAllMembershipTypes();
+            
             var viewModel = new CustomerFormViewModel
             {
-                Customer = new CustomerViewModel(),
                 MembershipTypes = Mapper.Map<IEnumerable<MembershipTypeViewModel>>(membershipTypes)
             };
             return View("CustomerForm", viewModel);
@@ -51,37 +51,31 @@ namespace asp.net_mvc_video_rental_store.Controllers
                 return HttpNotFound();
 
             var membershipTypes = _unitOfWork.MembershipTypes.GetAllMembershipTypes();
-            var viewModel = new CustomerFormViewModel
-            {
-                Customer = Mapper.Map<CustomerViewModel>(customer),
-                MembershipTypes = Mapper.Map<IEnumerable<MembershipTypeViewModel>>(membershipTypes)
-            };
+
+            var viewModel = Mapper.Map<CustomerFormViewModel>(customer);
+            viewModel.MembershipTypes = Mapper.Map<IEnumerable<MembershipTypeViewModel>>(membershipTypes);
+            
             return View("CustomerForm", viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(CustomerFormViewModel viewModel)
+        public ActionResult Save(CustomerFormViewModel customer)
         {
             if (!ModelState.IsValid)
             {
-                var vm = new CustomerFormViewModel
-                {
-                    Customer = viewModel.Customer,
-                    MembershipTypes = Mapper.Map<IEnumerable<MembershipTypeViewModel>>(_unitOfWork.MembershipTypes.GetAllMembershipTypes())
-                };
-                return View("CustomerForm", vm);
+                var viewModel = customer;
+                viewModel.MembershipTypes = Mapper.Map<IEnumerable<MembershipTypeViewModel>>(_unitOfWork.MembershipTypes.GetAllMembershipTypes());
+                
+                return View("CustomerForm", viewModel);
             }
 
-            if (viewModel.Customer.Id == 0)
-                _unitOfWork.Customers.Add(Mapper.Map<Customer>(viewModel.Customer));
+            if (customer.Id == 0)
+                _unitOfWork.Customers.Add(Mapper.Map<Customer>(customer));
             else
             {
-                var customer = _unitOfWork.Customers.GetById(viewModel.Customer.Id);
-                customer.Name = viewModel.Customer.Name;
-                customer.BirthDate = viewModel.Customer.BirthDate;
-                customer.IsSubscribedToNewsletter = viewModel.Customer.IsSubscribedToNewsletter;
-                customer.MembershipTypeId = viewModel.Customer.MembershipTypeId;
+                var dbCustomer = _unitOfWork.Customers.GetById(customer.Id);
+                Mapper.Map(customer, dbCustomer);
             }
 
             _unitOfWork.Complete();

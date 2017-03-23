@@ -8,7 +8,7 @@ namespace asp.net_mvc_video_rental_store.Core.ViewModels
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var customer = (CustomerViewModel)validationContext.ObjectInstance;
+            var customer = (CustomerFormViewModel)validationContext.ObjectInstance;
 
             if (customer.MembershipTypeId == MembershipType.Unknown || customer.MembershipTypeId == MembershipType.PayAsYouGo)
                 return ValidationResult.Success;
