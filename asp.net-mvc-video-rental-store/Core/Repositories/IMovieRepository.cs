@@ -8,5 +8,6 @@ namespace asp.net_mvc_video_rental_store.Core.Repositories
         IEnumerable<Movie> GetAllMovies();
         Movie GetById(int id);
         void Add(Movie movie);
+        void Remove(Movie movie);
     }
 }

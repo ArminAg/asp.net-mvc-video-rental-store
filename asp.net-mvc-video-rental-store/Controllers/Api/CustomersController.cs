@@ -4,7 +4,6 @@ using asp.net_mvc_video_rental_store.Core.Models;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Web.Http;
 
 namespace asp.net_mvc_video_rental_store.Controllers.Api
@@ -18,10 +17,10 @@ namespace asp.net_mvc_video_rental_store.Controllers.Api
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IHttpActionResult GetCustomers()
         {
             var customers = _unitOfWork.Customers.GetAllCustomers();
-            return Mapper.Map<IEnumerable<CustomerDto>>(customers);
+            return Ok(Mapper.Map<IEnumerable<CustomerDto>>(customers));
         }
 
         public IHttpActionResult GetCustomer(int id)
@@ -48,31 +47,35 @@ namespace asp.net_mvc_video_rental_store.Controllers.Api
         }
 
         [HttpPut]
-        public void UpdateCustomer(int id, CustomerDto customerDto)
+        public IHttpActionResult UpdateCustomer(int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
 
             var customer = _unitOfWork.Customers.GetById(id);
 
             if (customer == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
 
             Mapper.Map(customerDto, customer);
 
             _unitOfWork.Complete();
+
+            return Ok();
         }
 
         [HttpDelete]
-        public void DeleteCustomer(int id)
+        public IHttpActionResult DeleteCustomer(int id)
         {
             var customer = _unitOfWork.Customers.GetById(id);
 
             if (customer == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
 
             _unitOfWork.Customers.Remove(customer);
             _unitOfWork.Complete();
+
+            return Ok();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace asp.net_mvc_video_rental_store.App_Start
 
                 m.CreateMap<Movie, MovieViewModel>().ReverseMap();
                 m.CreateMap<Movie, MovieFormViewModel>().ReverseMap();
+                m.CreateMap<Movie, MovieDto>().ReverseMap();
 
                 m.CreateMap<MembershipType, MembershipTypeViewModel>().ReverseMap();
 
