@@ -153,7 +153,8 @@ namespace asp.net_mvc_video_rental_store.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    DrivingLicence = model.DrivingLicence
+                    DrivingLicence = model.DrivingLicence,
+                    Phone = model.Phone
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -380,7 +381,8 @@ namespace asp.net_mvc_video_rental_store.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    DrivingLicence = model.DrivingLicence
+                    DrivingLicence = model.DrivingLicence,
+                    Phone = model.Phone
                 };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)

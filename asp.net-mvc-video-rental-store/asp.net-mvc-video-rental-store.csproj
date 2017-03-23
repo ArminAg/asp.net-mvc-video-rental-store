@@ -312,6 +312,10 @@
     <Compile Include="Persistence\Migrations\201703230934159_AddDrivingLicenceToApplicationUser.Designer.cs">
       <DependentUpon>201703230934159_AddDrivingLicenceToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persistence\Migrations\201703231029095_AddPhoneToUser.cs" />
+    <Compile Include="Persistence\Migrations\201703231029095_AddPhoneToUser.Designer.cs">
+      <DependentUpon>201703231029095_AddPhoneToUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persistence\Migrations\Configuration.cs" />
     <Compile Include="Persistence\ApplicationDbContext.cs" />
     <Compile Include="Persistence\Repositories\CustomerRepository.cs" />
@@ -651,6 +655,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Persistence\Migrations\201703230934159_AddDrivingLicenceToApplicationUser.resx">
       <DependentUpon>201703230934159_AddDrivingLicenceToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\Migrations\201703231029095_AddPhoneToUser.resx">
+      <DependentUpon>201703231029095_AddPhoneToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

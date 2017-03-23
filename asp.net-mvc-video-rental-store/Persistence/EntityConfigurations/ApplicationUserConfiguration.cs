@@ -10,6 +10,10 @@ namespace asp.net_mvc_video_rental_store.Persistence.EntityConfigurations
             Property(u => u.DrivingLicence)
                 .HasMaxLength(255)
                 .IsRequired();
+
+            Property(u => u.Phone)
+                .HasMaxLength(50)
+                .IsRequired();
         }
     }
 }
