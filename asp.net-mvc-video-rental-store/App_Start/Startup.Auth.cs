@@ -6,6 +6,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 using System;
+using System.Configuration;
 
 namespace asp.net_mvc_video_rental_store
 {
@@ -55,8 +56,10 @@ namespace asp.net_mvc_video_rental_store
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "393286711058668",
-               appSecret: Environment.GetEnvironmentVariable("FacebookAppSecret"));
+               appId: ConfigurationManager.AppSettings["FacebookAppId"],
+               appSecret: (String.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("FacebookAppSecret")) ? 
+                            ConfigurationManager.AppSettings["FacebookAppSecret"] : 
+                            Environment.GetEnvironmentVariable("FacebookAppSecret")));
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
