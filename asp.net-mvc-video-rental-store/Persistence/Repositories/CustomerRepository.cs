@@ -28,5 +28,10 @@ namespace asp.net_mvc_video_rental_store.Persistence.Repositories
                 .Include(c => c.MembershipType)
                 .SingleOrDefault(c => c.Id == id);
         }
+
+        public void Add(Customer customer)
+        {
+            _context.Customers.Add(customer);
+        }
     }
 }

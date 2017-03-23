@@ -2,6 +2,7 @@
 {
     public class MembershipTypeViewModel
     {
+        public byte Id { get; set; }
         public byte DiscountRate { get; set; }
         public string Name { get; set; }
     }

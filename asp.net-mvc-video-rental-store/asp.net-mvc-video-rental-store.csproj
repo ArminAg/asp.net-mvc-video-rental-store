@@ -235,6 +235,7 @@
     <Compile Include="Core\ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="Core\ViewModels\MembershipTypeViewModel.cs" />
     <Compile Include="Core\ViewModels\MovieViewModel.cs" />
+    <Compile Include="Core\ViewModels\CustomerFormViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -293,6 +294,8 @@
     <Compile Include="Persistence\Repositories\CustomerRepository.cs" />
     <Compile Include="Core\Repositories\ICustomerRepository.cs" />
     <Compile Include="Core\Repositories\IMovieRepository.cs" />
+    <Compile Include="Core\Repositories\IMembershipTypeRepository.cs" />
+    <Compile Include="Persistence\Repositories\MembershipTypeRepository.cs" />
     <Compile Include="Persistence\Repositories\MovieRepository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -358,6 +361,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Persistence\Migrations\201703221944124_InitialModel.resx">

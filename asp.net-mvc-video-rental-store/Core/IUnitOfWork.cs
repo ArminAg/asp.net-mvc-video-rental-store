@@ -6,6 +6,7 @@ namespace asp.net_mvc_video_rental_store.Core
     {
         ICustomerRepository Customers { get; }
         IMovieRepository Movies { get; }
+        IMembershipTypeRepository MembershipTypes { get; }
 
         void Complete();
     }

@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 namespace asp.net_mvc_video_rental_store.Core.Repositories
 {
-    public interface ICustomerRepository
+    public interface IMembershipTypeRepository
     {
-        IEnumerable<Customer> GetAllCustomers();
-        Customer GetById(int id);
-        void Add(Customer customer);
+        IEnumerable<MembershipType> GetAllMembershipTypes();
     }
 }

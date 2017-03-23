@@ -1,4 +1,5 @@
 ﻿using asp.net_mvc_video_rental_store.Core;
+using asp.net_mvc_video_rental_store.Core.Models;
 using asp.net_mvc_video_rental_store.Core.ViewModels;
 using AutoMapper;
 using System.Collections.Generic;
@@ -29,6 +30,48 @@ namespace asp.net_mvc_video_rental_store.Controllers
                 return HttpNotFound();
 
             return View(Mapper.Map<CustomerViewModel>(customer));
+        }
+
+        public ActionResult Create()
+        {
+            var membershipTypes = _unitOfWork.MembershipTypes.GetAllMembershipTypes();
+            var viewModel = new CustomerFormViewModel
+            {
+                MembershipTypes = Mapper.Map<IEnumerable<MembershipTypeViewModel>>(membershipTypes)
+            };
+            return View("CustomerForm", viewModel);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _unitOfWork.Customers.GetById(id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            var membershipTypes = _unitOfWork.MembershipTypes.GetAllMembershipTypes();
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = Mapper.Map<CustomerViewModel>(customer),
+                MembershipTypes = Mapper.Map<IEnumerable<MembershipTypeViewModel>>(membershipTypes)
+            };
+            return View("CustomerForm", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Save(CustomerFormViewModel viewModel)
+        {
+            if (viewModel.Customer.Id == 0)
+                _unitOfWork.Customers.Add(Mapper.Map<Customer>(viewModel.Customer));
+            else
+            {
+                var customer = _unitOfWork.Customers.GetById(viewModel.Customer.Id);
+                Mapper.Map(viewModel.Customer, customer);
+            }
+
+            _unitOfWork.Complete();
+
+            return RedirectToAction("Index", "Customers");
         }
     }
 }

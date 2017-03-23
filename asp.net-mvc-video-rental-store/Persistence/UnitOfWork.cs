@@ -10,12 +10,14 @@ namespace asp.net_mvc_video_rental_store.Persistence
 
         public ICustomerRepository Customers { get; private set; }
         public IMovieRepository Movies { get; private set; }
+        public IMembershipTypeRepository MembershipTypes { get; private set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
             Customers = new CustomerRepository(_context);
             Movies = new MovieRepository(_context);
+            MembershipTypes = new MembershipTypeRepository(_context);
         }
 
         public void Complete()
