@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 namespace asp.net_mvc_video_rental_store.Core.Repositories
 {
-    public interface IMovieRepository
+    public interface IGenreRepository
     {
-        IEnumerable<Movie> GetAllMovies();
-        Movie GetById(int id);
-        void Add(Movie movie);
+        IEnumerable<Genre> GetAllGenres();
     }
 }

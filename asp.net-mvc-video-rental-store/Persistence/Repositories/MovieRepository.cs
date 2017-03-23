@@ -28,5 +28,10 @@ namespace asp.net_mvc_video_rental_store.Persistence.Repositories
                 .Include(m => m.Genre)
                 .SingleOrDefault(m => m.Id == id);
         }
+
+        public void Add(Movie movie)
+        {
+            _context.Movies.Add(movie);
+        }
     }
 }
