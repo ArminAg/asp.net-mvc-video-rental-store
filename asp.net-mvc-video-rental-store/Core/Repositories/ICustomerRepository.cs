@@ -5,7 +5,7 @@ namespace asp.net_mvc_video_rental_store.Core.Repositories
 {
     public interface ICustomerRepository
     {
-        IEnumerable<Customer> GetAllCustomers();
+        IEnumerable<Customer> GetAllCustomers(string query = null);
         Customer GetById(int id);
         void Add(Customer customer);
         void Remove(Customer customer);

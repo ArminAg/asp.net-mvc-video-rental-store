@@ -15,11 +15,16 @@ namespace asp.net_mvc_video_rental_store.Persistence.Repositories
             _context = context;
         }
 
-        public IEnumerable<Movie> GetAllMovies()
+        public IEnumerable<Movie> GetAllMovies(string query = null)
         {
-            return _context.Movies
+            var moviesQuery = _context.Movies
                 .Include(m => m.Genre)
-                .ToList();
+                .Where(m => m.NumberAvailable > 0);
+
+            if (!string.IsNullOrWhiteSpace(query))
+                moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
+
+            return moviesQuery.ToList();
         }
 
         public Movie GetById(int id)

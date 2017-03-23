@@ -5,7 +5,7 @@ namespace asp.net_mvc_video_rental_store.Core.Repositories
 {
     public interface IMovieRepository
     {
-        IEnumerable<Movie> GetAllMovies();
+        IEnumerable<Movie> GetAllMovies(string query = null);
         Movie GetById(int id);
         ICollection<Movie> GetMoviesByIds(List<int> movieIds);
         void Add(Movie movie);

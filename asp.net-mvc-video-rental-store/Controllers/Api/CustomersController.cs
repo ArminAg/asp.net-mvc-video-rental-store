@@ -17,9 +17,9 @@ namespace asp.net_mvc_video_rental_store.Controllers.Api
             _unitOfWork = unitOfWork;
         }
 
-        public IHttpActionResult GetCustomers()
+        public IHttpActionResult GetCustomers(string query = null)
         {
-            var customers = _unitOfWork.Customers.GetAllCustomers();
+            var customers = _unitOfWork.Customers.GetAllCustomers(query);
             return Ok(Mapper.Map<IEnumerable<CustomerDto>>(customers));
         }
 

@@ -18,9 +18,9 @@ namespace asp.net_mvc_video_rental_store.Controllers.Api
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<MovieDto> GetMovies()
+        public IEnumerable<MovieDto> GetMovies(string query = null)
         {
-            var movies = _unitOfWork.Movies.GetAllMovies();
+            var movies = _unitOfWork.Movies.GetAllMovies(query);
             return Mapper.Map<IEnumerable<MovieDto>>(movies);
         }
 

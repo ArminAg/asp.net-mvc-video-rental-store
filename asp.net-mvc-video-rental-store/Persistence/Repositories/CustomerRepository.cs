@@ -15,11 +15,15 @@ namespace asp.net_mvc_video_rental_store.Persistence.Repositories
             _context = context;
         }
 
-        public IEnumerable<Customer> GetAllCustomers()
+        public IEnumerable<Customer> GetAllCustomers(string query = null)
         {
-            return _context.Customers
-                .Include(c => c.MembershipType)
-                .ToList();
+            var customersQuery = _context.Customers
+                .Include(c => c.MembershipType);
+
+            if (!string.IsNullOrWhiteSpace(query))
+                customersQuery = customersQuery.Where(c => c.Name.Contains(query));
+                    
+            return customersQuery.ToList();
         }
 
         public Customer GetById(int id)
