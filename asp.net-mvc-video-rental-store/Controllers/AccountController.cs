@@ -1,5 +1,5 @@
-﻿using asp.net_mvc_video_rental_store.Core.ViewModels.Account;
-using asp.net_mvc_video_rental_store.Models;
+﻿using asp.net_mvc_video_rental_store.Core.Models;
+using asp.net_mvc_video_rental_store.Core.ViewModels.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;

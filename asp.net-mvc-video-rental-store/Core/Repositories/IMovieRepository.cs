@@ -7,6 +7,7 @@ namespace asp.net_mvc_video_rental_store.Core.Repositories
     {
         IEnumerable<Movie> GetAllMovies();
         Movie GetById(int id);
+        ICollection<Movie> GetMoviesByIds(List<int> movieIds);
         void Add(Movie movie);
         void Remove(Movie movie);
     }

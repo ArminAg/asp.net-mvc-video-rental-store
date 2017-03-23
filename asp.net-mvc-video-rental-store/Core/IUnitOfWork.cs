@@ -8,6 +8,7 @@ namespace asp.net_mvc_video_rental_store.Core
         IMovieRepository Movies { get; }
         IMembershipTypeRepository MembershipTypes { get; }
         IGenreRepository Genres { get; }
+        IRentalRepository Rentals { get; }
 
         void Complete();
     }

@@ -9,6 +9,7 @@ namespace asp.net_mvc_video_rental_store.Core.Models
         public DateTime DateAdded { get; set; }
         public DateTime ReleaseDate { get; set; }
         public byte NumberInStock { get; set; }
+        public byte NumberAvailable { get; set; }
 
         // Navigation Properties
         public byte GenreId { get; set; }

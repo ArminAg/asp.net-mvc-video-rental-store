@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
+﻿using asp.net_mvc_video_rental_store.Core.Models;
+using asp.net_mvc_video_rental_store.Persistence;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using asp.net_mvc_video_rental_store.Models;
-using asp.net_mvc_video_rental_store.Persistence;
+using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace asp.net_mvc_video_rental_store
 {

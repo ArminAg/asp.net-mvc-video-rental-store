@@ -29,6 +29,13 @@ namespace asp.net_mvc_video_rental_store.Persistence.Repositories
                 .SingleOrDefault(m => m.Id == id);
         }
 
+        public ICollection<Movie> GetMoviesByIds(List<int> movieIds)
+        {
+            return _context.Movies
+                .Where(m => movieIds.Contains(m.Id))
+                .ToList();
+        }
+
         public void Add(Movie movie)
         {
             _context.Movies.Add(movie);
