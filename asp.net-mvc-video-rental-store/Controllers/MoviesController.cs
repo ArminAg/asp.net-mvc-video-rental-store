@@ -51,27 +51,33 @@ namespace asp.net_mvc_video_rental_store.Controllers
             if (movie == null)
                 return HttpNotFound();
 
-            var genres = _unitOfWork.Genres.GetAllGenres();
-            var viewModel = new MovieFormViewModel
-            {
-                Movie = Mapper.Map<MovieViewModel>(movie),
-                Genres = Mapper.Map<IEnumerable<GenreViewModel>>(genres)
-            };
+            var viewModel = Mapper.Map<MovieFormViewModel>(movie);
+            viewModel.Genres = Mapper.Map<IEnumerable<GenreViewModel>>(_unitOfWork.Genres.GetAllGenres());
+
             return View("MovieForm", viewModel);
         }
 
-        public ActionResult Save(MovieFormViewModel viewModel)
+        public ActionResult Save(MovieFormViewModel movie)
         {
-            if (viewModel.Movie.Id == 0)
+            if (!ModelState.IsValid)
             {
-                viewModel.Movie.DateAdded = DateTime.Now;
-                _unitOfWork.Movies.Add(Mapper.Map<Movie>(viewModel.Movie));
+                var viewModel = movie;
+                viewModel.Genres = Mapper.Map<IEnumerable<GenreViewModel>>(_unitOfWork.Genres.GetAllGenres());
+
+                return View("MovieForm", viewModel);
+            }
+            if (movie.Id == 0)
+            {
+                var newMovie = Mapper.Map<Movie>(movie);
+                newMovie.DateAdded = DateTime.Now;
+                _unitOfWork.Movies.Add(newMovie);
             }
             else
             {
-                var movie = _unitOfWork.Movies.GetById(viewModel.Movie.Id);
-                Mapper.Map(viewModel.Movie, movie);
+                var dbMovie = _unitOfWork.Movies.GetById(movie.Id.Value);
+                Mapper.Map(movie, dbMovie);
             }
+
             _unitOfWork.Complete();
 
             return RedirectToAction("Index", "Movies");
