@@ -19,7 +19,10 @@ namespace asp.net_mvc_video_rental_store.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
+
+            return View("ReadOnlyList");
         }
 
         public ActionResult Details(int id)
@@ -32,6 +35,7 @@ namespace asp.net_mvc_video_rental_store.Controllers
             return View(Mapper.Map<MovieViewModel>(movie));
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Create()
         {
             var genres = _unitOfWork.Genres.GetAllGenres();
@@ -43,6 +47,7 @@ namespace asp.net_mvc_video_rental_store.Controllers
             return View("MovieForm", viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _unitOfWork.Movies.GetById(id);
@@ -56,6 +61,7 @@ namespace asp.net_mvc_video_rental_store.Controllers
             return View("MovieForm", viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(MovieFormViewModel movie)
         {
             if (!ModelState.IsValid)

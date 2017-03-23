@@ -35,6 +35,7 @@ namespace asp.net_mvc_video_rental_store.Controllers.Api
         }
 
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -48,6 +49,7 @@ namespace asp.net_mvc_video_rental_store.Controllers.Api
         }
 
         [HttpPut]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public void UpdateMovie(int id, MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -64,6 +66,7 @@ namespace asp.net_mvc_video_rental_store.Controllers.Api
         }
 
         [HttpDelete]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public void DeleteMovie(int id)
         {
             var movie = _unitOfWork.Movies.GetById(id);

@@ -225,6 +225,7 @@
     <Compile Include="Core\Models\Genre.cs" />
     <Compile Include="Core\Models\MembershipType.cs" />
     <Compile Include="Core\Models\Movie.cs" />
+    <Compile Include="Core\Models\RoleName.cs" />
     <Compile Include="Core\ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="Core\ViewModels\Account\ExternalLoginListViewModel.cs" />
     <Compile Include="Core\ViewModels\Account\ForgotPasswordViewModel.cs" />
@@ -598,12 +599,13 @@
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\List.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
+    <Content Include="Views\Movies\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Persistence\Migrations\201703221944124_InitialModel.resx">
