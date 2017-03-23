@@ -17,6 +17,7 @@ namespace asp.net_mvc_video_rental_store.Core.ViewModels
         public int Id { get; set; }
 
         [Required]
+        [StringLength(255)]
         public string Name { get; set; }
 
         public bool IsSubscribedToNewsletter { get; set; }

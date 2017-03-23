@@ -8,5 +8,6 @@ namespace asp.net_mvc_video_rental_store.Core.Repositories
         IEnumerable<Customer> GetAllCustomers();
         Customer GetById(int id);
         void Add(Customer customer);
+        void Remove(Customer customer);
     }
 }

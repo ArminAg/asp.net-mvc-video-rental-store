@@ -65,7 +65,7 @@ namespace asp.net_mvc_video_rental_store.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             // Web Api
-            //System.Web.Http.GlobalConfiguration.Configuration.DependencyResolver = new Ninject.Web.WebApi.NinjectDependencyResolver(kernel);
+            System.Web.Http.GlobalConfiguration.Configuration.DependencyResolver = new Ninject.Web.WebApi.NinjectDependencyResolver(kernel);
 
             // MVC 
             System.Web.Mvc.DependencyResolver.SetResolver(new Ninject.Web.Mvc.NinjectDependencyResolver(kernel));

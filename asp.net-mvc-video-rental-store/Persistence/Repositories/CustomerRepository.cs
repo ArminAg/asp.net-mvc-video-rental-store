@@ -33,5 +33,10 @@ namespace asp.net_mvc_video_rental_store.Persistence.Repositories
         {
             _context.Customers.Add(customer);
         }
+
+        public void Remove(Customer customer)
+        {
+            _context.Customers.Remove(customer);
+        }
     }
 }
