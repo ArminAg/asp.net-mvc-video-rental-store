@@ -19,8 +19,7 @@ namespace asp.net_mvc_video_rental_store.Controllers
 
         public ActionResult Index()
         {
-            var movies = _unitOfWork.Movies.GetAllMovies();
-            return View(Mapper.Map<IEnumerable<MovieViewModel>>(movies));
+            return View();
         }
 
         public ActionResult Details(int id)
