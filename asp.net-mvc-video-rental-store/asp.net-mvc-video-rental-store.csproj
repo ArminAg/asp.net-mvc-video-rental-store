@@ -218,6 +218,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Core\Dtos\CustomerDto.cs" />
+    <Compile Include="Core\Dtos\GenreDto.cs" />
     <Compile Include="Core\Dtos\MembershipTypeDto.cs" />
     <Compile Include="Core\Dtos\MovieDto.cs" />
     <Compile Include="Core\Models\Customer.cs" />

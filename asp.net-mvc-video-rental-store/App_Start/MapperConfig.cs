@@ -23,6 +23,7 @@ namespace asp.net_mvc_video_rental_store.App_Start
                 m.CreateMap<MembershipType, MembershipTypeDto>().ReverseMap();
 
                 m.CreateMap<Genre, GenreViewModel>().ReverseMap();
+                m.CreateMap<Genre, GenreDto>().ReverseMap();
             });
         }
     }

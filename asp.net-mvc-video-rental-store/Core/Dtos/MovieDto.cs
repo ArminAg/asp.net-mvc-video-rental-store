@@ -21,5 +21,7 @@ namespace asp.net_mvc_video_rental_store.Core.Dtos
 
         [Required]
         public byte GenreId { get; set; }
+
+        public GenreDto Genre { get; set; }
     }
 }
