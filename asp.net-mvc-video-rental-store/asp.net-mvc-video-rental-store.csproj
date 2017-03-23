@@ -234,6 +234,7 @@
     <Compile Include="Core\ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="Core\ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="Core\ViewModels\MembershipTypeViewModel.cs" />
+    <Compile Include="Core\ViewModels\Min18YearsIfAMember.cs" />
     <Compile Include="Core\ViewModels\MovieFormViewModel.cs" />
     <Compile Include="Core\ViewModels\MovieViewModel.cs" />
     <Compile Include="Core\ViewModels\CustomerFormViewModel.cs" />
@@ -311,7 +312,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

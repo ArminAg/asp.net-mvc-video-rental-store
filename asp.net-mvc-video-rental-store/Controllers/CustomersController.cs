@@ -37,6 +37,7 @@ namespace asp.net_mvc_video_rental_store.Controllers
             var membershipTypes = _unitOfWork.MembershipTypes.GetAllMembershipTypes();
             var viewModel = new CustomerFormViewModel
             {
+                Customer = new CustomerViewModel(),
                 MembershipTypes = Mapper.Map<IEnumerable<MembershipTypeViewModel>>(membershipTypes)
             };
             return View("CustomerForm", viewModel);
@@ -59,14 +60,28 @@ namespace asp.net_mvc_video_rental_store.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(CustomerFormViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                var vm = new CustomerFormViewModel
+                {
+                    Customer = viewModel.Customer,
+                    MembershipTypes = Mapper.Map<IEnumerable<MembershipTypeViewModel>>(_unitOfWork.MembershipTypes.GetAllMembershipTypes())
+                };
+                return View("CustomerForm", vm);
+            }
+
             if (viewModel.Customer.Id == 0)
                 _unitOfWork.Customers.Add(Mapper.Map<Customer>(viewModel.Customer));
             else
             {
                 var customer = _unitOfWork.Customers.GetById(viewModel.Customer.Id);
-                Mapper.Map(viewModel.Customer, customer);
+                customer.Name = viewModel.Customer.Name;
+                customer.BirthDate = viewModel.Customer.BirthDate;
+                customer.IsSubscribedToNewsletter = viewModel.Customer.IsSubscribedToNewsletter;
+                customer.MembershipTypeId = viewModel.Customer.MembershipTypeId;
             }
 
             _unitOfWork.Complete();
