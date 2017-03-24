@@ -531,6 +531,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\site.css" />
+    <Content Include="Scripts\app\controllers\customersController.js" />
+    <Content Include="Scripts\app\controllers\moviesController.js" />
+    <Content Include="Scripts\app\controllers\rentalsController.js" />
+    <Content Include="Scripts\app\services\customerService.js" />
+    <Content Include="Scripts\app\services\movieService.js" />
+    <Content Include="Scripts\app\services\rentalService.js" />
     <Content Include="Scripts\bloodhound.js" />
     <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootbox.js" />

@@ -75,6 +75,7 @@ namespace asp.net_mvc_video_rental_store.Controllers
             {
                 var newMovie = Mapper.Map<Movie>(movie);
                 newMovie.DateAdded = DateTime.Now;
+                newMovie.NumberAvailable = newMovie.NumberInStock;
                 _unitOfWork.Movies.Add(newMovie);
             }
             else

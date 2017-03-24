@@ -20,6 +20,14 @@ namespace asp.net_mvc_video_rental_store
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                        "~/Scripts/app/services/customerService.js",
+                        "~/Scripts/app/services/movieService.js",
+                        "~/Scripts/app/services/rentalService.js",
+                        "~/Scripts/app/controllers/moviesController.js",
+                        "~/Scripts/app/controllers/rentalsController.js",
+                        "~/Scripts/app/controllers/customersController.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
